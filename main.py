@@ -53,7 +53,6 @@ async def get_yandexgpt_response(text: str):
               ]
             }
         ) as response:
-            #print(response.status)
             if response.status == 200:
                 data = await response.json()
                 return data['result']['alternatives'][0]['message']['text']
